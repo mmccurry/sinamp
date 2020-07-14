@@ -1,4 +1,3 @@
-#!/bin/python
 import choose
 import play
 
