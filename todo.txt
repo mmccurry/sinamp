@@ -1,9 +1,0 @@
-Current Issues:
-    When you exit fzf without selecting anything it tries to play everything in the current directory
-    You can only select contents of directory that has files in it. 
-    No way to select artist folder for instance
-    No way to recursively find files and play them so selecting artist file wouldn't do anything anyway
-
-TODO:
-    Add shuffle feature
-    use arguments so I can select different options
