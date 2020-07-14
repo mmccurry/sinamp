@@ -1,0 +1,5 @@
+#!/bin/python
+import choose
+import play
+
+play.song(choose.song())
