@@ -3,13 +3,13 @@ import pexpect
 import os
 
 def song ():
-    song = Popen(['/bin/fzf'],
+    song = Popen(['fzf'],
         stdout=PIPE,
         universal_newlines=True).communicate()[0].strip()
     return song
 
 def album ():
-    album = Popen(['/bin/fzf'],
+    album = Popen(['fzf'],
         stdout=PIPE,
         universal_newlines=True).communicate()[0].strip()
     albumDir = os.path.dirname(album)
