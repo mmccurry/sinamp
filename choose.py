@@ -12,9 +12,10 @@ def album ():
     album = Popen(['fzf'],
         stdout=PIPE,
         universal_newlines=True).communicate()[0].strip()
-    albumDir = os.path.dirname(album)
-    songList = sorted(os.listdir(albumDir))
-    return list(map(lambda song:albumDir+'/'+song, songList))
+    if album:
+        albumDir = os.path.dirname(album)
+        songList = sorted(os.listdir(albumDir))
+        return list(map(lambda song:albumDir+'/'+song, songList))
 
 # def song ():
 #     choice = pexpect.spawn('/bin/fzf')
