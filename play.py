@@ -1,7 +1,7 @@
 import pexpect
 
 def song (song):
-    print(f'Playing:\n{song}')
+    print(f'\nPlaying:\n{song}')
     play = pexpect.spawn(f'mplayer -really-quiet -novideo "{song}"')
     play.interact()
 
