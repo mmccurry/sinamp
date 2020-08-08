@@ -1,6 +1,8 @@
 from subprocess import Popen, PIPE
 import pexpect
 import os
+from pyfzf.pyfzf import FzfPrompt
+fzf = FzfPrompt()
 
 def song ():
     song = Popen(['fzf'],
@@ -17,13 +19,8 @@ def album ():
         songList = sorted(os.listdir(albumDir))
         return list(map(lambda song:albumDir+'/'+song, songList))
 
-# def song ():
-#     choice = pexpect.spawn('/bin/fzf')
-#     choice.interact()
-#     return choice.read()
-
-# def album ():
-#     command = 'find ./ -type d | fzf'
-#     album = pexpect.spawn('/bin/bash', ['-c', command])
-#     album.interact()
-#     return album
+def directory ():
+    directories = []
+    for root, dirs, files in os.walk('.'):
+        directories.append(root)
+    dir = fzf.prompt(directories)[0]
